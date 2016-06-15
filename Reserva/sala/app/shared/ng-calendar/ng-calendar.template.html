@@ -1,0 +1,55 @@
+<div class="header">{{calendar.month}} {{calendar.year}}</div>
+<div class="header-days"  ng-swipe-left="ngSwipeRight()" ng-swipe-right="ngSwipeLeft()">
+	<i class="ico ico-back" ng-click="eventBackWeek()" ng-class="{disable:!afterWeek}"></i>
+	<ul ng-class="{'transition-left':transitionLeft,'transition-right':transitionRight}">
+		<li class="disable-select" ng-repeat="day in calendar.days"  ng-class="{today:day.today, 'last-day':day.lastDay }">
+			{{day.day}}
+			<div ng-if="day.today">Hoy</div>
+		</li>
+	</ul>
+	<i class="ico ico-forw" ng-click="eventNextWeek()"></i>
+</div>
+<div class="hours" ng-class="{'transition-left':transitionLeft,'transition-right':transitionRight}" ng-swipe-left="ngSwipeRight()" ng-swipe-right="ngSwipeLeft()">
+
+	<ul ng-repeat="hours in calendar.hoursByDay">
+		<li ng-repeat="hourByDay in hours" ng-switch on="hourByDay.status.id" class="disable-select">
+			<div ng-switch-when="0" style="background-color:{{hourByDay.color}}" class="reserved" ng-class="{alone:hourByDay.hora == 'Optional(1)'}" ng-click="showSummary($parent.$parent.$index, $index)">
+				<b>
+					{{hourByDay.timeStart | date:'h' }} <span>a</span> {{hourByDay.timeEnd | date:'h'}} <span>{{hourByDay.timeEnd | date:'a'}}</span>
+				</b>
+			</div>
+			<div ng-switch-when="1" ng-click="toggleReserved($parent.$parent.$index, $index)">
+				<b>
+					{{hourByDay.timeStart | date:'h' }} <span>a</span> {{hourByDay.timeEnd | date:'h'}} <span>{{hourByDay.timeEnd | date:'a'}}</span>
+				</b>
+			</div>
+			<div ng-switch-when="2" class="selected" ng-class="{alone:hourByDay.hora == '1'}" style="background-color:{{calendar.color}}" ng-click="toggleReserved($parent.$parent.$index, $index)">
+				<b>
+					{{hourByDay.timeStart | date:'h' }} <span>a</span> {{hourByDay.timeEnd | date:'h'}} <span>{{hourByDay.timeEnd | date:'a'}}</span>
+				</b>
+			</div>
+			<div ng-switch-when="3" class="out" ng-class="{alone:hourByDay.hora == 'Optional(1)'}">
+				<b>
+					{{hourByDay.timeStart | date:'h' }} <span>a</span> {{hourByDay.timeEnd | date:'h'}} <span>{{hourByDay.timeEnd | date:'a'}}</span>
+				</b>
+			</div>
+			<div ng-switch-when="4" class="past" >
+				<b>
+					{{hourByDay.timeStart | date:'h' }} <span>a</span> {{hourByDay.timeEnd | date:'h'}} <span>{{hourByDay.timeEnd | date:'a'}}</span>
+				</b>
+			</div>
+		</li>
+	</ul>
+	
+</div>
+
+<footer>
+		<span class="x-text">Selecciona el horario de apartado: </span>
+		<span class="hour" ng-show="reservaSummary.reservaTemp" >
+			<span>{{reservaSummary.dateStart | date:'h'}}</span>
+			{{reservaSummary.dateStart | date:'a'}} &nbsp;&nbsp; a &nbsp;&nbsp;	
+			<span>{{reservaSummary.dateEnd | date:'h'}}</span> 
+			{{reservaSummary.dateEnd | date:'a'}}
+		</span>
+		<button ng-click="eventReserve()" class="on-reserve" ng-class="{'on-reserve':onReserve}">Reservar</button>
+</footer>

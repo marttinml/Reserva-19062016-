@@ -1,0 +1,51 @@
+<article>
+    <header>Sala Reservada</header>
+    <content>
+        <section class="alert-content-section">
+            <figure class="alert-picture">
+                <img class="landscape" src="assets/img/09_iconoperfil.svg" alt="imagenPerfil">
+            </figure>
+            <p class="text-left alert-text-picture large">Este horario esta reservado por
+                <br> <span>{{options.name}}</span></p>
+        </section>
+        <section class="alert-content-section">
+            <div class="alert-date-separator"></div>
+            <section class="alert-date">
+                <div class="alert-date-day">
+                    {{options.start | date:'EEEE'}}
+                </div>
+                <div class="alert-date-number">
+                    {{options.start | date:'dd'}}
+                </div>
+                <div class="alert-date-month">
+                    {{options.start | date:'MMMM'}}
+                </div>
+            </section>
+            <section class="alert-hour-combo">
+                <div class="alert-hour">
+                    <div class="alert-hour-number">
+                        {{options.start | date:'h'}}
+                    </div>
+                    <div class="alert-hour-time">
+                        {{options.start | date:'a'}}
+                    </div>
+                </div>
+                <div class="alert-center-word">a</div>
+                <div class="alert-hour">
+                    <div class="alert-hour-number">
+                        {{options.end | date:'h'}}
+                    </div>
+                    <div class="alert-hour-time">
+                        {{options.end | date:'a'}}
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="motivo-junta">
+            <div>Motivo: <span>{{options.motivo}}</span> </div>
+        </section>
+    </content>
+    <footer>
+        <button ng-click="options.accept()">Aceptar</button>
+    </footer>
+</article>

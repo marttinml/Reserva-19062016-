@@ -1,0 +1,17 @@
+<article>
+    <header>Cancelar reserva</header>
+    <content>
+        <section class="alert-content-section">
+            <p class="alert-subtitle">Ingresa tu código de reserva:</p>
+            <div class="combo-input">
+                <input type="text" placeholder="Código" id="codigoReserva" pattern="\d*" maxlength="4">
+            </div>
+            <div class="codigo-error" ng-hide="options.code.showError">Código incorrecto</div>
+        </section>
+    </content>
+    <footer class="cancel">
+        <button ng-click="options.code.accept()">Aceptar</button>
+        <button ng-click="options.code.back()">Cancelar</button>
+        <div class="button-separator"></div>
+    </footer>
+</article>

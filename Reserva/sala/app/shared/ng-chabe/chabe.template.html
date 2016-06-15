@@ -1,0 +1,39 @@
+<content class="contenido-predictivo">
+
+    <section class="alert-content-section" style="min-height: 24px;">
+        <p class="alert-subtitle medium">La sala quedará reservada para el</p>
+    </section>
+    <section class="alert-content-section gray">
+        <div class="alert-date-separator-predictivo"></div>
+        <section class="alert-date">
+            <div class="alert-date-day">
+                {{options.dateStart | date:'EEEE'}}
+            </div>
+            <div class="alert-date-number">
+                {{options.dateStart | date:'d'}}
+            </div>
+            <div class="alert-date-month">
+                {{options.dateStart | date:'MMMM'}}
+            </div>
+        </section>
+        <section class="alert-hour-combo">
+            <div class="alert-hour">
+                <div class="alert-hour-number">
+                    {{options.dateStart | date:'h'}}
+                </div>
+                <div class="alert-hour-time">
+                    {{options.dateStart | date:'a'}}
+                </div>
+            </div>
+            <div class="alert-center-word">a</div>
+            <div class="alert-hour">
+                <div class="alert-hour-number">
+                    {{options.dateEnd | date:'h'}}
+                </div>
+                <div class="alert-hour-time">
+                    {{options.dateEnd | date:'a'}}
+                </div>
+            </div>
+        </section>
+    </section>
+</content>

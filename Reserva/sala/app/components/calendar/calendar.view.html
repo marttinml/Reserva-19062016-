@@ -1,0 +1,14 @@
+<calendar ng-controller="CalendarController">
+	
+	<a href="#/">
+		<i class="ico-back"></i>
+		<span>Regresar</span>
+	</a>
+	<div source="sourceCalendar" on-reserve="reserve" on-next-week="nextWeek" on-back-week="backWeek" on-show-summary="showSummary" ng-calendar></div>
+	
+	<div ng-show="sourceAlert.open" ng-alert-predictivo source="sourceAlert" on-typing="eventTyping" on-selected="selectedItem" class="ng-alert ng-alert-predictivo"></div>
+
+	<div ng-alert-reserved source="sourceAlert" class="ng-alert ng-alert-reserved" ng-show="reserved"></div>
+
+	<div ng-alert-ocuped source="sourceAlert.ocuped" class="ng-alert ng-alert-ocuped" ng-show="ocuped"></div>
+</calendar>

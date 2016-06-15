@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="Hall">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sala</title>
+
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+
+    <!-- References css -->
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/main.style.css">
+
+
+    <!-- modules -->
+    <link rel="stylesheet" href="app/components/calendar/calendar.style.css">
+    <link rel="stylesheet" href="app/components/home/home.style.css">
+    <link rel="stylesheet" href="app/components/confirmacion/confirmacion.style.css">
+
+    <!-- directives -->
+    <link rel="stylesheet" href="app/shared/ng-calendar/ng-calendar.style.css">
+    <link rel="stylesheet" href="app/shared/ng-alert/ng-alert.style.css">
+    <link rel="stylesheet" href="app/shared/spin/assets/spin.style.css">
+
+    <link rel="stylesheet" href="assets/css/main.style.temp.css">
+</head>
+
+<body ng-controller="AppController">
+
+    <spin source="spinLabel" ng-show="spin"></spin>
+    <div ng-view></div>
+
+	<!-- References js -->
+	<script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-locale_es-mx.js"></script>
+    
+	<script src="assets/js/angular-route.min.js"></script>
+    <script src="assets/js/angular-touch.min.js"></script>
+	<script src="assets/js/raphael.min.js"></script>
+	
+    <script src="assets/js/util.js"></script>
+
+	<script src="assets/libs/ng-autocomplete.js"></script>
+
+	<!-- libs -->
+	<script src="assets/libs/prototype.getweek.js"></script>
+	<script src="assets/libs/prototype.isempty.js"></script>
+    <script src="assets/libs/prototype.vash.js"></script>
+
+    <script src="app/app.module.js"></script>
+    <script src="app/app.controller.js"></script>
+    <script src="app/app.router.js"></script>
+   
+    <!-- services -->
+	<script src="app/shared/services/phone-provider.service.js"></script>
+	<script src="app/shared/services/reservas.service.js"></script>
+	
+	<!-- filters -->
+	<script src="app/shared/filters/titlecase.filter.js"></script>
+
+	<!-- directives -->
+	<script src="app/shared/ng-calendar/ng-calendar.directive.js"></script>
+	<script src="app/shared/ng-alert/ng-alert.directive.js"></script>
+	<script src="app/shared/ng-clock/ng-clock.directive.js"></script>
+	<script src="app/shared/ng-clock/ng-clock.plugin.js"></script>
+	<script src="app/shared/ng-chabe/chabe.directive.js"></script>
+    <script src="app/shared/spin/spin.directive.js"></script>
+
+    <script src="app/components/home/home.controller.js"></script>
+    <script src="app/components/calendar/calendar.controller.js"></script>
+    <script src="app/components/confirmacion/confirmacion.controller.js"></script>
+    <script src="app/components/busqueda/busqueda.controller.js"></script>
+    <script src="app/components/reservacion/reservacion.controller.js"></script>
+
+</body>
+
+</html>

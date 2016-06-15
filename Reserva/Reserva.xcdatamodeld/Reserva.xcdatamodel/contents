@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E33e" minimumToolsVersion="Automatic">
+    <entity name="Empleados" representedClassName=".Empleados" syncable="YES">
+        <attribute name="correo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="empresa" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idempleado" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updtcorreo" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
+    <entity name="Reserva" representedClassName=".Reserva" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fechafinD" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="fechafinS" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fechainicioD" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="fechainicioS" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="foto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hora" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idempleado" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idreserva" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="mail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="motivo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Empleados" positionX="-45" positionY="81" width="128" height="120"/>
+        <element name="Reserva" positionX="-45" positionY="0" width="128" height="225"/>
+    </elements>
+</model>

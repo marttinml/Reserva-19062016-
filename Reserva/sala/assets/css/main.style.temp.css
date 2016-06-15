@@ -1,0 +1,18 @@
+@media (max-width: 400px) {
+	calendar > a > .ico-back { 
+		top: 35px;
+	}
+	calendar > a > span {
+		display: none;
+	}
+
+	.ng-calendar > .header-days{
+  		font-size: 11px;
+  		line-height: 5.8;
+	}
+	calendar footer > .x-text {
+		font-size: 16px;
+		width: 20%;
+		float: left;
+	}
+}

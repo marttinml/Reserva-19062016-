@@ -1,0 +1,21 @@
+<div class="ng-alert">
+    <article>
+        <header>Sala Reservada</header>
+        <content>
+            <section class="alert-content-section">
+                <figure class="alert-picture">
+                    <img class="landscape" src="assets/img/09_iconoperfil.svg" alt="imagenPerfil">
+                </figure>
+                <p class="text-left alert-text-picture"><span>{{options.reserved.name}}</span>, gracias por reservar la sala.</p>
+            </section>
+            <section class="alert-content-section">
+                <p class="alert-text-message">Enviaremos el siguiente código de reserva al correo: {{options.reserved.mail}}</p>
+                <p class="alert-code">{{session.code}}</p>
+                <i class="alert-note">Consérvalo para futuros cambios</i>
+            </section>
+        </content>
+        <footer>
+            <button ng-click="options.reserved.accept()">Aceptar</button>
+        </footer>
+    </article>
+</div>

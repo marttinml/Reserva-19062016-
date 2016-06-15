@@ -1,0 +1,265 @@
+.alert-date-separator-predictivo {
+    width: 1px;
+    height: 130px;
+    position: absolute;
+    left: 420px;
+    top: 20px;
+    background: #747474;
+}
+
+.ng-alert > article.predictivo {
+    /*    height: 750px;*/
+    width: 100%;
+    background: rgba(255, 255, 255, 0);
+    overflow: hidden;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 0;
+    padding-top: 170px;
+    -webkit-transition: all ease 0.3s;
+}
+
+.ng-alert > article.predictivo.open {
+    height: 750px;
+}
+
+.ng-alert > article.predictivo .combo-input {
+    border-bottom: 1px solid #6a6a6a;
+    margin: 25px auto 10px auto;
+    width: 290px;
+    position: relative;
+    float: left;
+    margin-right: 20px;
+}
+
+.ng-alert a > .ico-back {
+    height: 18px;
+    width: 12px;
+    position: absolute;
+    left: 20px;
+    top: 22px;
+    z-index: 2px;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-image: url(../../../assets/img/08_izquierda.svg);
+}
+
+.ng-alert a > span {
+    padding-left: 45px;
+    font-size: 20px;
+    line-height: 3.2;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    color: #666;
+}
+
+.predice-resultado {
+    color: #ffffff;
+    text-transform: capitalize;
+    font-weight: 200;
+    text-align: left;
+    padding-left: 10px
+}
+
+.resultados {
+    overflow: auto;
+    height: 417px;
+    font-size: 20px;
+    float: left;
+}
+
+.resultados ul li {}
+
+.button-right {
+    position: absolute;
+    right: 20px;
+    border: 0;
+    border-radius: 3px;
+    top: 50px;
+    padding: 2px 20px 3px;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    -webkit-appearance: none;
+    font-family: 'Omnes Light', Arial;
+    background: rgb(36, 139, 193);
+    letter-spacing: 2px;
+}
+
+.ng-alert .regresar-predictivo a > span {
+    padding-left: 40px;
+    font-size: 17px;
+    line-height: 2.9;
+    position: absolute;
+    left: 0px;
+    top: 7px;
+    color: #333;
+}
+
+.plugin-selectbox {
+    width: 190px;
+    height: 35px;
+    display: inline-block;
+    background: #d9d9d9;
+    vertical-align: bottom;
+    border: 1px solid #747474;
+    margin-top: 2px;
+    margin-left: 5px;
+    font-size: 20px;
+    line-height: 35px;
+    padding-left: 10px;
+    position: relative;
+}
+
+.plugin-selectbox-flecha {
+    position: absolute;
+    border-left: 1px solid #747474;
+    width: 30px;
+    right: 0;
+    top: 0;
+    display: block;
+    height: 100%;
+    background: url(../../../assets/img/13_flechitaabajo.svg);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 5px;
+}
+
+.ng-alert > article.predictivo .combo-input.correo-electronico {
+    width: 180px;
+    float: left;
+    margin-right: 20px;
+}
+
+.combo-select {
+    width: 240px;
+    float: left;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.combo-correo-nombre {
+    height: 85px!important;
+}
+
+.plugin-elements {
+    display: none;
+    background: #d9d9d9;
+    position: absolute;
+    left: -1px;
+    border: 1px solid #747474;
+    width: 159px;
+    padding-left: 10px
+}
+
+.plugin-elements.open {
+    display: block;
+}
+
+.on-confirm {
+    background-color: rgb(200, 200, 200);
+}
+
+
+/* UPDATE */
+
+.header-busqueda {
+    height: 85px !important;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 80px;
+}
+
+.chabe-title {
+    margin: 0;
+    font-weight: 200;
+    font-family: 'Omnes Regular';
+    color: #333 !important;
+}
+
+.chabe-input {
+    width: 440px!important;
+    position: relative;
+}
+
+.chabe-resultados {
+    width: 440px !important;
+    margin: -25px auto 25px;
+    color: #4A4A4A !important;
+    font-size: 17px !important;
+    font-family: 'Omnes Regular';
+    text-align: left;
+    background: #D8D8D8;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 160px;
+}
+
+.chabe-resultados ul {}
+
+.chabe-resultados ul li {
+    padding: 5px;
+    border-bottom: 1px solid #979797;
+}
+
+.chabe-clear {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-image: url(../../../assets/img/26_TACHE_SMALL_gris.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    right: 0;
+    top: 10px;
+}
+
+.chabe-input > input {
+    font-size: 23px!important;
+    padding-bottom: 5px !important;
+    text-align: left;
+    padding: 0;
+    padding-left: 0!important;
+    border: 0;
+    background: none;
+    font-family: 'Omnes Light';
+    color: #333 !important;
+    width: 100%;
+}
+
+.chabe-input > input::-webkit-input-placeholder {
+    color: #747474 !important;
+}
+
+.ng-alert > article.predictivo {
+    /*    height: 750px;*/
+    width: 100%;
+    background: rgba(255, 255, 255, 0);
+    overflow: hidden;
+    margin: 0 auto;
+    position: absolute;
+    top: 300px;
+    left: 0;
+    margin-left: 0;
+    padding-top: 0;
+    -webkit-transition: all ease 0.3s;
+}
+
+.chabe-footer {
+    position: absolute!important;
+    bottom: 0!important;
+    right: 0!important;
+    background-color: rgba(255, 255, 255, 0)!important;
+}
+
+section.motivo-junta {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+section.motivo-junta > div > span {
+    font-weight: lighter;
+}

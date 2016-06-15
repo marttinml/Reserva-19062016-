@@ -1,0 +1,14 @@
+<article>
+    <header>{{options.confirm.title}}</header>
+    <content>
+        <section class="alert-content-section">
+            <p style="margin:0;">{{options.confirm.name}}</p>
+            <p class="alert-subtitle-cancelled">Enviaremos una confirmación de la cancelación a tu correo {{options.confirm.mail}}</p>
+        </section>
+    </content>
+    <footer class="cancel">
+        <button ng-click="options.confirm.accept()">Aceptar</button>
+        <button ng-click="options.confirm.back()">Cancelar</button>
+        <div class="button-separator"></div>
+    </footer>
+</article>

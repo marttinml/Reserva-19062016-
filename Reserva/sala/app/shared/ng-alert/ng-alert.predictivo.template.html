@@ -1,0 +1,75 @@
+<article class="predictivo" ng-class="{open:busqueda}">
+    <content class="contenido-predictivo">
+        <section class="alert-content-section" style="min-height: 24px;">
+            <p class="alert-subtitle medium">La sala quedará reservada para el</p>
+        </section>
+        <section class="alert-content-section gray">
+            <div class="alert-date-separator-predictivo"></div>
+            <section class="alert-date">
+                <div class="alert-date-day">
+                    {{options.confirm.content.dateStart | date:'EEEE'}}
+                </div>
+                <div class="alert-date-number">
+                    {{options.confirm.content.dateStart | date:'d'}}
+                </div>
+                <div class="alert-date-month">
+                    {{options.confirm.content.dateStart | date:'MMMM'}}
+                </div>
+            </section>
+            <section class="alert-hour-combo">
+                <div class="alert-hour">
+                    <div class="alert-hour-number">
+                        {{options.confirm.content.dateStart | date:'h'}}
+                    </div>
+                    <div class="alert-hour-time">
+                        {{options.confirm.content.dateStart | date:'a'}}
+                    </div>
+                </div>
+                <div class="alert-center-word">a</div>
+                <div class="alert-hour">
+                    <div class="alert-hour-number">
+                        {{options.confirm.content.dateEnd | date:'h'}}
+                    </div>
+                    <div class="alert-hour-time">
+                        {{options.confirm.content.dateStart | date:'a'}}
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="alert-content-section combo-correo-nombre">
+            <p class="alert-subtitle medium">Ingresa tu nombre o número de empleado para confirmar:</p>
+            <div class="combo-input reservacion-input ">
+                <input ng-keyup="searchUser(typed)" ng-model="typed" ng-autocomplete type="text" placeholder="Nombre o número de empleado" id="numeroEmpleado" style="font-size:20px;" class="medium">
+            </div>
+            <div class="combo-input correo-electronico reservacion-input">
+                <input ng-keyup="validationFields()" ng-model="correoInput" ng-autocomplete type="text" placeholder="Correo electrónico" id="correoEmpleado" style="font-size:20px;" class="medium" autocapitalize="off" autocomplete="off" autocorrect="off">
+            </div>
+            <div class="combo-select">
+                <div class="plugin-selectbox medium" ng-click="toggleSelect()">
+                    <span>{{itemEmail}}</span>
+                    <span class="plugin-selectbox-flecha"></span>
+                    <div class="plugin-elements" ng-class="{open:selectIsOpen}">
+                        <div ng-repeat="elemento in correosPlugin" ng-click="elegirCorreo($index)">{{elemento}}</div>
+                    </div>
+                </div>
+            </div>
+            <button class="button-right" ng-class="{'on-confirm':onConfirm}" ng-click="aceptarInput()">Confirmar</button>
+        </section>
+        <section class="alert-content-section" style="width:50%; margin: 0; padding-left: 50px; margin-top: -20px;">
+            <div class="resultados" ng-show="options.employeeList.length > 0 ? true : false">
+                <ul>
+                    <li class="predice-resultado" ng-repeat="item in options.employeeList" ng-click="selected($index)">{{item.reservedBy}}</li>
+                </ul>
+            </div>
+        </section>
+
+    </content>
+</article>
+<header class="header-predictivo">
+    <div class="regresar-predictivo">
+        <a ng-click="close()">
+            <i class="ico-back"></i>
+            <span>Regresar</span>
+        </a>
+    </div>
+</header>

@@ -1,0 +1,323 @@
+.ng-calendar{
+	width: 100%;
+	text-align: center;
+	background-image: url(../../../assets/img/12_fondoblur.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.ng-calendar > .header{
+	height: 85px;
+	width: inherit;
+	line-height: 3;
+	background-color: rgb(249,249,249);
+	font-size: 30px;
+}
+.ng-calendar > .header-days{
+	height: 63px;
+	width: inherit;
+	line-height: 2.6;
+	background-color: rgb(249,249,249);
+	margin-top: 3px;
+	font-size: 25px;
+	position: relative;
+}
+.ng-calendar > .header-days i.ico{
+	height: 30px;
+	width: 20px;
+	position: absolute;
+	top: 15px;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	display: block;
+	cursor: pointer;
+}
+.ng-calendar > .header-days i.ico.disable{
+	opacity: .2;
+	cursor: default;
+}
+.ng-calendar > .header-days i.ico.ico-back{
+	left: 2%;
+	background-image: url(../../../assets/img/08_izquierda.svg);
+}
+.ng-calendar > .header-days i.ico.ico-forw{
+	right: 2%;
+	background-image: url(../../../assets/img/07_derecha.svg);
+}
+.ng-calendar > .header-days > ul{
+	width: 92%;
+	height: inherit;
+	margin: auto 4% auto 4%;
+}
+.ng-calendar > .header-days > ul > li{
+	width: 20%;
+	height: inherit;
+	float: left;
+	overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+
+.ng-calendar > .header-days > ul > li.today{
+	font-family: 'Omnes Regular';
+}
+.ng-calendar > .header-days > ul > li.today > div{
+	line-height: 1;
+	margin-top: -20px;
+	font-size: 14px;
+}
+
+.ng-calendar > .header-days > ul > li.last-day {
+    color: rgb(200,200,200);
+}
+.ng-calendar > .hours{
+	width: 92%;
+	height: auto;
+	margin-top: 15px;
+	line-height: 1.8;
+	margin-left: 4%;
+	margin-right: 4%;
+	font-size: 18px;
+}
+.ng-calendar > .hours > ul{
+	height: 100%;
+	width: 18%;
+	position: relative;
+	margin: auto 1% auto 1%;
+	float: left;
+}
+.ng-calendar > .hours > ul > li{
+	width: 100%;
+	margin: 0 1% 0 1%;
+	height: 7.69%;
+	position: relative;
+	color: rgb(255,255,255);
+}
+.ng-calendar > .hours > ul > li > div{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 4px;
+	bottom: 4px;
+	border: 2px solid rgba(255,255,255,.7);
+	border-radius: 2px;
+	cursor: pointer;
+	font-size: 18px;
+    line-height: 2.5;
+    background-color: rgba(255,255,255,.2);
+	background-size: 22px 22px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.ng-calendar > .hours > ul > li > div > span{
+	font-size: 14px;
+}
+.ng-calendar > .hours > ul > li > div.reserved{
+	top: 0;
+	bottom: 0;
+	background-color: rgb(220,0,0);
+	border:0;
+	border-radius: 0;
+	background-image: url(../../../assets/img/05_ocupado.svg);
+    background-position-x: 140px;
+}
+.ng-calendar > .hours > ul > li > div.selected{
+	top: 0;
+	bottom: 0;
+	/*background-color: rgb(148, 191, 55);*/
+    line-height: 36px;
+	border:0;
+	border-radius: 0;
+	background-image: url(../../../assets/img/06_seleccion.svg);
+    background-position-x: 140px;
+}
+
+
+
+.ng-calendar > .hours > ul > li > div.out{
+	top: 0;
+	bottom: 0;
+	background-color: rgba(200,200,200,.7);
+	border:0;
+	border-radius: 0;
+	background-image: url(../../../assets/img/05_ocupado.svg);
+    background-position-x: 140px;
+}
+.ng-calendar > .hours > ul > li > div.past{
+	background-color: rgba(255,255,250,.6);
+	border:0;
+	border-radius: 0;
+    line-height: 27px;
+}
+
+.ng-calendar > .hours > ul > li > div.alone{
+	top: 6px;
+	bottom: 4px;
+}
+
+.ng-calendar > .hours > ul > li > div.selected.alone {
+    line-height: 25px!important;
+}
+
+footer {
+	margin-top: 24px;
+	padding-left: 30px;
+	background-color: rgb(255,255,255);
+	text-align: left;
+	height: 90px;
+	position: relative;
+}
+footer > .x-text{
+    vertical-align: super;
+    font-size: 25px;
+    color: #666;
+    position: absolute;
+    left: 40px;
+    top:30px;
+}
+footer > .hour{
+    font-size: 28px;
+    line-height: 1.6;
+    padding-left: 370px;
+    color: #666;
+}
+footer > .hour > span{
+    font-size: 56px;
+    color: #333;
+}
+
+footer > button{
+	border: 0;
+	float: right;
+	margin-top: 20px;
+	margin-right: 30px;
+	padding: 12px;
+	padding-bottom: 8px;
+	padding-left: 40px;
+	padding-right: 40px;
+	color: rgb(255,255,255);
+	border-radius: 3px;
+	font-size: 25px;
+	-webkit-appearance: none;
+	font-family: 'Omnes Light', Arial;
+	background-color: rgb(36, 139, 193);
+	letter-spacing: 2px;
+	font-weight: 200px;
+}
+
+footer > button.on-reserve{
+	background-color: rgb(200,200,200);
+}
+
+
+/* @media */
+@media (max-height: 1200px) {
+  .ng-calendar > .hours > ul > li > div {
+    /*font-size: 18px;*/
+    /*line-height: 3.5;*/
+  }
+  .ng-calendar > .hours > ul > li > div > span {
+    /*font-size: 14px;*/
+  }
+}
+@media (max-height: 1100px) {
+  .ng-calendar > .hours > ul > li > div {
+    /*font-size: 18px;
+    line-height: 2.5;
+*/  }
+  .ng-calendar > .hours > ul > li > div > span {
+    font-size: 14px;
+  }
+}
+@media (max-height: 1000px) {
+  .ng-calendar > .hours > ul > li > div {
+    /*font-size: 18px;
+    line-height: 2;*/
+  }
+  .ng-calendar > .hours > ul > li > div > span {
+    font-size: 14px;
+  }
+}
+@media (max-height: 800px) {
+  .ng-calendar > .hours > ul > li > div {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .ng-calendar > .hours > ul > li > div > span {
+    font-size: 12px;
+  }
+}
+@media (max-height: 700px) {
+  .ng-calendar > .hours > ul > li > div {
+    font-size: 11px;
+	line-height: 1.7;  
+	}
+  .ng-calendar > .hours > ul > li > div > span {
+    font-size: 12px;
+  }
+}
+@media (max-height: 600px) {
+  .ng-calendar > .hours > ul > li > div {
+    font-size: 10px;
+    line-height: 1;
+  }
+  .ng-calendar > .hours > ul > li > div > span {
+    font-size: 8px;
+  }
+}
+@media (max-height: 500px) {
+  .ng-calendar > .hours > ul > li > div {
+    font-size: 0;
+  }
+  .ng-calendar > .hours > ul > li > div > span {
+    font-size: 0;
+  }
+}
+
+
+@media (max-width: 1000px) {
+	.ng-calendar > .header-days{
+	  	font-size: 18px;
+	  	line-height: 2.2;
+	  }
+	  footer > .x-text{
+	    vertical-align: super;
+	    font-size: 32px;
+	}
+}
+@media (max-width: 800px) {
+	.ng-calendar > .header-days{
+	  	font-size: 16px;
+	  	line-height: 2.5;
+	  }
+	  footer {
+	    font-size: 18px;
+	  }
+}
+@media (max-width: 700px) {
+	  footer {
+	    font-size: 14px;
+	  }
+}
+@media (max-width: 600px) {
+	.ng-calendar > .header-days{
+	  	font-size: 14px;
+	  	line-height: 4;
+	  }
+	footer {
+	    font-size: 0;
+	  }
+}
+@media (max-width: 500px) {
+	.ng-calendar > .header-days{
+	  	font-size: 12px;
+	  	line-height: 5;
+	}
+	.ng-calendar footer > .hour{
+	    line-height: 1;
+	}
+	.ng-calendar footer > .x-text{
+		padding-top: 7px;
+		line-height: 1;
+	}
+}
+

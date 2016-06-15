@@ -1,0 +1,177 @@
+.ng-clock {
+    width: 100%;
+    text-align: center;
+    background-image: url(../../../assets/img/10_fondoreloj.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    resize: both;
+    overflow: auto;
+}
+
+svg {
+    display: none;
+}
+
+svg:first-of-type {
+    display: block;
+}
+
+#holder {
+    height: 500px;
+    width: 500px;
+    color: white;
+    margin: 0 auto;
+}
+
+.section-main {
+    width: 50%;
+    height: 100vh;
+}
+
+.section-main-header {
+    font-size: 65px;
+    font-weight: 100;
+    color: #fff;
+    margin: 50px auto 20px auto;
+}
+
+.section-main-date {
+    font-size: 30px;
+    font-weight: 100;
+    color: #fff;
+    margin: 20px auto;
+}
+
+.ng-clock section.section-middle {
+    width: 25%;
+    /*    background: red;*/
+}
+
+.ng-clock section.section-middle .section-button {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    overflow: auto;
+    width: 160px;
+    height: 160px;
+    background: rgba(44, 44, 44, 0.38);
+    border-radius: 100px;
+    border: 1px solid #fff;
+    position: relative;
+}
+
+.section-button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.ng-clock section.section-middle .section-button > div.section-buton-content {
+    color: #fff;
+    font-size: 30px;
+    padding: 10%;
+    padding-top: 18%;
+}
+
+.ng-clock footer.section-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+    margin: 1em;
+    padding: 0;
+    height: 50px!important;
+}
+
+.footer-element {
+    font-size: 15px;
+}
+
+.logo-att {
+    width: 40px;
+    height: 40px;
+    background: url(../../../assets/img/01_logoatt.svg);
+    background-size: cover;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.icon-tache {
+    width: 25px;
+    height: 25px;
+    background: url(../../../assets/img/iconocancelarreserva.svg);
+    background-size: cover;
+    position: absolute;
+    bottom: 22px;
+    left: 68px;
+}
+
+.icon-calendario {
+    width: 25px;
+    height: 25px;
+    background: url(../../../assets/img/iconoapartarsala.svg);
+    background-size: cover;
+    position: absolute;
+    bottom: 22px;
+    left: 68px;
+}
+
+.color-disponible {
+    width: 20px;
+    height: 20px;
+    background: white;
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.color-ocupado {
+    width: 20px;
+    height: 20px;
+    background: #da4242;
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+
+/*Laptops*/
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+    #holder {
+        height: 100px;
+        width: 100px;
+        margin: 0 auto;
+    }
+}
+
+
+/*iPad*/
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+    #holder {
+        height: 400px;
+        width: 400px;
+        margin: 0 auto;
+    }
+}
+
+
+/*iPhone Portrait*/
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    #holder {
+        height: 300px;
+        width: 300px;
+        margin: 0 auto;
+    }
+}

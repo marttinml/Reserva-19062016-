@@ -1,0 +1,22 @@
+calendar > a{
+	position: absolute;
+	text-decoration: none;
+    color: #333;
+}
+calendar > a > .ico-back{
+	height: 18px;
+	width: 12px;
+	position: absolute;
+	left: 20px;
+	top: 22px;
+	z-index: 2px;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-image: url(../../../assets/img/08_izquierda.svg);
+}
+
+calendar > a > span{
+	padding-left: 40px;
+	font-size: 17px;
+	line-height: 3.7;
+}

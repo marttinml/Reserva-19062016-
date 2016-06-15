@@ -1,0 +1,47 @@
+<div class="ng-alert">
+   
+    <header class="header-predictivo">
+        <div class="regresar-predictivo">
+            <a href="#/calendar">
+                <i class="ico-back"></i>
+                <span>Regresar</span>
+            </a>
+        </div>
+    </header>
+
+    <section class="header-busqueda">
+        <p class="chabe-title">Busca y selecciona tu nombre o número de empleado:</p>
+        <div class="combo-input chabe-input">
+            <input
+            type="text" 
+            placeholder="Nombre o número de empleado"
+            autofocus
+            ng-model="numeroEmpleado"
+            ng-keyup="buscarEmpleado()"
+            ng-trigger-blur="mostrarAlerta"
+            ng-blur="mostrarBotonClear = false"
+            ng-focus="mostrarBotonClear = true">
+            <div class="chabe-clear" ng-click="clearAll()" ng-hide="!mostrarBotonClear"></div>
+        </div>
+        <div class="combo-input chabe-input" ng-hide="!mostrarAlerta">
+            <input type="email" ng-model="correoEmpleado" ng-keyup="validarCorreo();" placeholder="Correo electrónico">
+        </div>
+        <div class="combo-input chabe-input" ng-hide="!mostrarAlerta">
+            <input type="text" ng-model="motivoEmpleado" ng-keyup="validarMotivo(); $event.which == 13 && confirmarReservacion();" placeholder="Motivo de la junta">
+        </div>
+        <div class="chabe-resultados" ng-hide="!mostrarRegistros">
+            <ul>
+                <li ng-repeat="registro in employeeList" ng-click="selectThis($index)">{{registro.reservedBy | titlecase}}</li>
+            </ul>
+        </div>
+    </section>
+
+    <article class="predictivo" ng-chabe source="options" ng-hide="!mostrarAlerta"></article>
+    
+    <footer class="chabe-footer" ng-hide="!mostrarAlerta">
+
+        <button ng-click="confirmarReservacion()" ng-class="{'on-reserve':!reservacionLista}">Confirmar</button>
+
+    </footer>
+
+</div>

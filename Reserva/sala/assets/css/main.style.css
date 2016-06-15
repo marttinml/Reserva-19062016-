@@ -1,0 +1,265 @@
+@font-face {
+    font-family: 'Omnes Light';
+    src: url('../font/SF-UI-Display-Light.otf') format('truetype')
+}
+
+@font-face {
+    font-family: 'Omnes Thin';
+    src: url('../font/SF-UI-Display-Thin.otf') format('truetype')
+}
+
+@font-face {
+    font-family: 'Omnes Regular';
+    src: url('../font/SF-UI-Display-Regular.otf') format('truetype')
+}
+
+@font-face {
+    font-family: 'Omnes Medium';
+    src: url('../font/SF-UI-Display-Medium.otf') format('truetype')
+}
+
+
+
+
+/*@font-face {
+    font-family: 'Omnes Light';
+    src: url('../font/Omnes_ATTW02Light.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'Omnes Regular';
+    src: url('../font/Omnes_ATTW02.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'Omnes Medium';
+    src: url('../font/Omnes_ATTW02Medium.ttf') format('truetype')
+}*/
+
+body {
+    font-family: 'Omnes Thin', Arial;
+    font-weight: 100;
+    color: #333;
+    font-size: 26px;
+}
+
+body,
+*:not(input,textarea) {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+.medium {
+    font-family: 'Omnes Regular';
+    color: #333!important;
+}
+.medium::-webkit-input-placeholder {
+    color: #747474!important;
+    font-family: 'Omnes Light';
+    opacity: 0.8;
+}
+.gray {
+    color: #333!important;
+}
+.reservacion-input {
+    margin-top: 23px!important;
+}
+.ng-alert .combo-input.reservacion-input input{
+    padding-bottom: 5px!important;
+}
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+::-webkit-input-placeholder {
+   color: #747474;
+}
+
+b{
+    font-family: 'Omnes Light', Arial;
+    font-weight: 100;
+}
+
+.disable-select {
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+
+.transition-left{
+      margin-left: -100%!important;
+      transition: .5s;
+}
+.transition-right{
+      margin-left: 200%!important;
+      transition: .5s;
+}
+
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+      .ng-clock section.section-middle .section-button {
+          position: absolute!important;
+          bottom: 100px!important;
+          width: 90px!important;
+          height: 90px!important;
+      }
+      
+      .ng-clock section.section-middle .section-button > div.section-buton-content {
+          font-size: 14px!important;
+      }
+      
+      .icon-tache,
+      .icon-calendario {
+          width: 20px!important;
+          height: 20px!important;
+          bottom: 13px!important;
+          left: 35px!important;
+      }
+      
+      .section-main-header {
+          font-size: 36px!important;
+          font-weight: 600!important;
+      }
+      
+      .section-main {
+          width: calc(100% - 40px)!important;
+          position: absolute!important;
+          left: 20px!important;
+          height: auto!important;
+      }
+      
+      div.section-button.left-button {
+          left: 20px!important;
+      }
+      
+      .ng-clock section.section-middle .section-button.right-button {
+          left: calc(100% - 115px)!important;
+      }
+      
+      .section-main-date {
+          font-size: 25px!important;
+          font-weight: 600!important;
+      }
+      
+      div.ng-clock footer.section-footer {
+          height: 70px !important;
+          width: 100% !important;
+      }
+      
+      .color-disponible {
+          margin-top: 0!important;
+      }
+      
+      .color-ocupado {
+          margin-top: 0!important;
+      }
+      
+      .section-footer ul li {
+          width: 100%;
+          float: left;
+          padding-left: 20px;
+          padding-bottom: 8px;
+      }
+      /*Calendario*/
+      
+      footer > .x-text {
+          font-size: 14px !important;
+          width: 135px !important;
+          left: 20px !important;
+          top: 10px !important;
+          padding-top:5px;
+      }
+      
+      footer > .hour {
+          position: absolute !important;
+          left: 20px;
+          padding-left: 0 !important;
+          font-size: 16px!important;
+          top: 47px;
+      }
+      
+      footer > .hour > span {
+          font-size: 26px!important;
+      }
+      
+      /*Predictivo*/
+      .ng-alert > article.predictivo {
+          padding-top: 130px!important;
+          height: 450px!important;
+      }
+      .alert-date-day {
+          font-size: 25px!important;
+      }
+      .alert-date-number {
+          font-size: 45px!important;
+      }
+      .alert-date-month {
+          font-size: 25px!important;
+      }
+      .alert-hour-number {
+          font-size: 50px!important;
+      }
+      .alert-hour-time {
+          font-size: 30px!important;
+          margin-top: -14px!important;
+      }
+      .alert-center-word{
+          font-size: 30px;
+      }
+      .ng-alert .alert-subtitle {
+          font-size: 18px!important;
+      }
+      .combo-correo-nombre {
+          height: 260px!important;
+      }
+      .button-right {
+          top: 205px!important;
+      }
+      .resultados {
+        position: absolute!important;
+        top: 30px!important;
+          height: 217px!important;
+        background-image: url(../../assets/img/12_fondoblur.png);
+          background-position-y: 390px;
+        left: 20px!important;
+        width: 100%!important;
+          
+      }
+      .ng-alert > article.predictivo .combo-input.reservacion-input{
+          position: absolute!important;
+          top: 50px;
+          width: 100%!important;
+      }
+      .ng-alert > article.predictivo .combo-input.reservacion-input.correo-electronico {
+          top: 100px;
+      }
+      .combo-select {
+        position: absolute;
+        top: 100px;
+        right: -30px;
+      }
+      .ng-alert > article > content .alert-content-section{
+          width: 90%!important;
+padding-left: 0px!important;
+      }
+      .ng-alert .combo-input.chabe-input {
+          width: 90%!important;
+      }
+      .ng-alert > article.predictivo {
+          top: 150px!important;
+      }
+      .ng-alert.ng-alert-ocuped > article {
+          height: 483px!important;
+      }
+      .ng-alert-ocuped .alert-date-separator {
+          display: none;
+      }
+}

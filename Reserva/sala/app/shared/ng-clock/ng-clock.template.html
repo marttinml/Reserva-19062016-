@@ -1,0 +1,37 @@
+<header class="section-header">
+    <div class="logo-att"></div>
+</header>
+
+<section class="section-middle">
+    <div class="section-button left-button" ng-click="options.cancelDate()">
+        <div class="section-buton-content"><b>Cancelar</b> Reserva</div>
+        <div class="icon-tache"></div>
+    </div>
+</section>
+
+<section class="section-main">
+    <h2 class="section-main-header">Sala de Juntas</h2>
+    <div id="holder"></div>
+    <h4 class="section-main-date">{{options.today}}</h4>
+</section>
+
+<section class="section-middle">
+    <div class="section-button right-button" onclick="window.location.href='#/calendar'">
+        <div class="section-buton-content"> <b>Reservar</b>  Sala</div>
+        <div class="icon-calendario"></div>
+    </div>
+</section>
+<footer class="section-footer">
+    <div>
+        <ul>
+            <li>
+                <div class="color-disponible"></div>
+                <span class="footer-element">Disponible</span>
+            </li>
+            <li>
+                <div class="color-ocupado"></div>
+                <span class="footer-element">Ocupado</span>
+            </li>
+        </ul>
+    </div>
+</footer>
