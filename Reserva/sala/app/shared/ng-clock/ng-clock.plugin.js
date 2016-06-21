@@ -1,26 +1,79 @@
 /*exported Clock*/
 /*global Raphael*/
 /*jslint browser:true*/
+
 var Clock = function (options) {
 
     var self = this;
-
-    self.now = new Date();
-
+    
     self.config = options;
+    
     self.Paper = Raphael(
         self.config.id,
         self.config.size.width,
         self.config.size.height);
+    
+    /* Extiende el objeto arc */
+    
+    self.Paper.customAttributes.arc = function (xloc, yloc, value, total, R) {
+        var alpha = 360 / total * value,
+            a = (90 - alpha) * Math.PI / 180,
+            x = xloc + R * Math.cos(a),
+            y = yloc - R * Math.sin(a),
+            path;
+        if (total == value) {
+            path = [
+              ["M", xloc, yloc - R],
+              ["A", R, R, 0, 1, 1, xloc - 0.01, yloc - R]
+          ];
+        } else {
+            path = [
+              ["M", xloc, yloc - R],
+              ["A", R, R, 0, +(alpha > 180), 1, x, y]
+          ];
+        }
+        return {
+            path: path
+        };
+    };
+    
+    
+    
+    /* init() */
+    
+    self.init = function () {
+        self.onClock(); // Dibuja el reloj
+        self.drawDates(); // Dibuja las horas
+    };
+    
+    
+    
+    
+    /* onClock() */
+    
+    self.onClock = function () {
+        
+        self.elements.init();
 
+        self.Paper.setViewBox(0, 0,
+            self.config.size.width,
+            self.config.size.height,
+            true);
+
+        var svg = document.querySelector("svg");
+        svg.removeAttribute("width");
+        svg.removeAttribute("height");
+        self.tiktok(self.elements); // Dibuja el reloj en svg
+    };
+    
     self.elements = (function () {
         var hour_sign = {};
         var hour_text = {};
-
+        var now = new Date();
         var time = {
-            hours: self.now.getHours(),
-            minutes: self.now.getMinutes(),
-            seconds: self.now.getSeconds()
+            hours: now.getHours(),
+            minutes: now.getMinutes(),
+            seconds: now.getSeconds()
         };
 
         var theme = self.config.attributes;
@@ -112,7 +165,7 @@ var Clock = function (options) {
             }
         };
     })();
-
+    
     self.tiktok = function (object) {
         if (object.hands !== undefined) {
             setInterval(function () {
@@ -130,38 +183,182 @@ var Clock = function (options) {
             alert('Error');
         }
     };
+    
+    
+    
+    
+    
+    
+    /* drawDates() */
+    
+    self.drawDates = function () {
 
-    self.Paper.customAttributes.arc = function (xloc, yloc, value, total, R) {
-        var alpha = 360 / total * value,
-            a = (90 - alpha) * Math.PI / 180,
-            x = xloc + R * Math.cos(a),
-            y = yloc - R * Math.sin(a),
-            path;
-        if (total == value) {
-            path = [
-              ["M", xloc, yloc - R],
-              ["A", R, R, 0, 1, 1, xloc - 0.01, yloc - R]
-          ];
-        } else {
-            path = [
-              ["M", xloc, yloc - R],
-              ["A", R, R, 0, +(alpha > 180), 1, x, y]
-          ];
+        var citaPancho = self.config.source;
+
+        function proccessClock(obj) {
+            var arrayTotal = [
+                {
+                    start: 0,
+                    end: 0.5,
+                    color: '#ffffff'
+                },
+                {
+                    start: 0.5,
+                    end: 1,
+                    color: '#ffffff'
+                },
+                {
+                    start: 1,
+                    end: 1.5,
+                    color: '#ffffff'
+                },
+                {
+                    start: 1.5,
+                    end: 2,
+                    color: '#ffffff'
+                },
+                {
+                    start: 2,
+                    end: 2.5,
+                    color: '#ffffff'
+                },
+                {
+                    start: 2.5,
+                    end: 3,
+                    color: '#ffffff'
+                },
+                {
+                    start: 3,
+                    end: 3.5,
+                    color: '#ffffff'
+                },
+                {
+                    start: 3.5,
+                    end: 4,
+                    color: '#ffffff'
+                },
+                {
+                    start: 4,
+                    end: 4.5,
+                    color: '#ffffff'
+                },
+                {
+                    start: 4.5,
+                    end: 5,
+                    color: '#ffffff'
+                },
+                {
+                    start: 5,
+                    end: 5.5,
+                    color: '#ffffff'
+                },
+                {
+                    start: 5.5,
+                    end: 6,
+                    color: '#ffffff'
+                },
+                {
+                    start: 6,
+                    end: 6.5,
+                    color: '#ffffff'
+                },
+                {
+                    start: 6.5,
+                    end: 7,
+                    color: '#ffffff'
+                },
+                {
+                    start: 7,
+                    end: 7.5,
+                    color: '#ffffff'
+                },
+                {
+                    start: 7.5,
+                    end: 8,
+                    color: '#ffffff'
+                },
+                {
+                    start: 8,
+                    end: 8.5,
+                    color: '#ffffff'
+                },
+                {
+                    start: 8.5,
+                    end: 9,
+                    color: '#ffffff'
+                },
+                {
+                    start: 9,
+                    end: 9.5,
+                    color: '#ffffff'
+                },
+                {
+                    start: 9.5,
+                    end: 10,
+                    color: '#ffffff'
+                },
+                {
+                    start: 10,
+                    end: 10.5,
+                    color: '#ffffff'
+                },
+                {
+                    start: 10.5,
+                    end: 11,
+                    color: '#ffffff'
+                },
+                {
+                    start: 11,
+                    end: 11.5,
+                    color: '#ffffff'
+                },
+                {
+                    start: 11.5,
+                    end: 12,
+                    color: '#ffffff'
+                }
+            ];
+
+            var elements = obj.length;
+
+            for (var k = 0; k < elements; k++) {
+
+                var inicio = obj[k].start < 12 ? obj[k].start : (obj[k].start - 12);
+                var ccolor = obj[k].color;
+                
+                for (var j = 0; j < arrayTotal.length; j++) {
+                    var valorEnColor = {
+                        start: inicio,
+                        end: inicio + 0.5,
+                        color: self.config.multicolor ? ccolor : '#da4242'
+                    };
+                    if (arrayTotal[j].start == inicio) {
+                        arrayTotal[j] = valorEnColor;
+                    }
+                }
+            }
+
+            arrayTotal.reverse();
+
+            return arrayTotal;
         }
-        return {
-            path: path
+
+        var objeto = {
+            arrayColors: proccessClock(citaPancho)
         };
+
+        self.readColors(objeto);
     };
 
     self.readColors = function (json) {
 
-        var i = 0;
         var ii = json.arrayColors.length;
         var constantHourse = (100 / 12);
         var delayed = 1 / ii;
 
-        for (i; i < ii; i++) {
+        for (var i = 0; i < ii; i++) {
             var delay = i * delayed;
+            
             var myArc = self.Paper
                 .path()
                 .attr({
@@ -170,9 +367,10 @@ var Clock = function (options) {
                     arc: [
                     self.config.size.center,
                     self.config.size.center,
-                    constantHourse * (json.arrayColors[i].start),
+                    (constantHourse * (json.arrayColors[i].start) / 2),
                     100, 95]
                 });
+            
             var myAnimation = Raphael.animation({
                 arc: [
                     self.config.size.center,
@@ -185,129 +383,9 @@ var Clock = function (options) {
 
         }
     };
-
-    self.drawDates = function () {
-
-        var citaPancho = self.config.source;
-
-
-        function proccessClock(obj) {
-            var arrayTotal = [
-                {
-                    start: 0,
-                    end: 1,
-                    color: '#ffffff'
-                },
-                {
-                    start: 1,
-                    end: 2,
-                    color: '#ffffff'
-                },
-                {
-                    start: 2,
-                    end: 3,
-                    color: '#ffffff'
-                },
-                {
-                    start: 3,
-                    end: 4,
-                    color: '#ffffff'
-                },
-                {
-                    start: 4,
-                    end: 5,
-                    color: '#ffffff'
-                },
-                {
-                    start: 5,
-                    end: 6,
-                    color: '#ffffff'
-                },
-                {
-                    start: 6,
-                    end: 7,
-                    color: '#ffffff'
-                },
-                {
-                    start: 7,
-                    end: 8,
-                    color: '#ffffff'
-                },
-                {
-                    start: 8,
-                    end: 9,
-                    color: '#ffffff'
-                },
-                {
-                    start: 9,
-                    end: 10,
-                    color: '#ffffff'
-                },
-                {
-                    start: 10,
-                    end: 11,
-                    color: '#ffffff'
-                },
-                {
-                    start: 11,
-                    end: 12,
-                    color: '#ffffff'
-                }
-            ];
-
-            var elements = obj.length;
-
-            for (var k = 0; k < elements; k++) {
-
-                var inicio = obj[k].start < 12 ? obj[k].start : (obj[k].start - 12);
-                var final = obj[k].end < 12 ? obj[k].end : (obj[k].end - 12);
-                var ccolor = obj[k].color;
-
-                // acompleto con el espacio en uso
-
-                for (var j = inicio; j < final; j++) {
-
-                    var valorEnColor = {
-                        start: inicio,
-                        end: inicio + (final - inicio),
-                        color: self.config.multicolor ? ccolor : '#da4242'
-                    };
-                    arrayTotal[inicio] = valorEnColor;
-
-                }
-            }
+    
+    
+    
 
 
-            arrayTotal.reverse();
-
-            console.log(arrayTotal);
-
-            return arrayTotal;
-        }
-
-        var objeto = {
-            arrayColors: proccessClock(citaPancho)
-        };
-
-        self.readColors(objeto);
-    };
-
-    self.onClock = function () {
-        self.elements.init();
-
-        self.Paper.setViewBox(0, 0,
-            self.config.size.width,
-            self.config.size.height,
-            true);
-
-        var svg = document.querySelector("svg");
-        svg.removeAttribute("width");
-        svg.removeAttribute("height");
-        self.tiktok(self.elements);
-    };
-
-    self.init = function () {
-        self.onClock();
-        self.drawDates();
-    };
 };
