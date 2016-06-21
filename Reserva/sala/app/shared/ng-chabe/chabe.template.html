@@ -20,6 +20,7 @@
             <div class="alert-hour">
                 <div class="alert-hour-number">
                     {{options.dateStart | date:'h'}}
+                    <span ng-show="options.dateStart.getMinutes() > 0">:{{options.dateStart | date:'mm' }}</span>
                 </div>
                 <div class="alert-hour-time">
                     {{options.dateStart | date:'a'}}
@@ -29,6 +30,7 @@
             <div class="alert-hour">
                 <div class="alert-hour-number">
                     {{options.dateEnd | date:'h'}}
+                    <span ng-show="options.dateEnd.getMinutes() > 0">:{{options.dateEnd | date:'mm' }}</span>
                 </div>
                 <div class="alert-hour-time">
                     {{options.dateEnd | date:'a'}}

@@ -20,6 +20,7 @@
                 <div class="alert-hour">
                     <div class="alert-hour-number">
                         {{options.confirm.content.dateStart | date:'h'}}
+                        <span ng-show="options.confirm.content.dateStart.getMinutes() > 0">:{{options.confirm.content.dateStart | date:'mm' }}</span>
                     </div>
                     <div class="alert-hour-time">
                         {{options.confirm.content.dateStart | date:'a'}}
@@ -29,9 +30,10 @@
                 <div class="alert-hour">
                     <div class="alert-hour-number">
                         {{options.confirm.content.dateEnd | date:'h'}}
+                          <span ng-show="options.confirm.content.dateEnd.getMinutes() > 0">:{{options.confirm.content.dateEnd | date:'mm' }}</span>
                     </div>
                     <div class="alert-hour-time">
-                        {{options.confirm.content.dateStart | date:'a'}}
+                        {{options.confirm.content.dateEnd | date:'a'}}
                     </div>
                 </div>
             </section>

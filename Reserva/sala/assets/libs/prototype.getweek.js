@@ -8,7 +8,8 @@ Date.prototype.parseToString = function() {
 	var minutes = this.getMinutes() < 10 ? '0'+this.getMinutes() : this.getMinutes();
 	var month   = (this.getMonth() + 1) < 10 ? '0'+(this.getMonth() + 1) : (this.getMonth() + 1);
     var date = this.getDate() < 10 ? '0'+this.getDate() : this.getDate();
-    var result = this.getFullYear()+'-'+month+'-'+date+'T'+hours+':00:00.000z';
+    var min = this.getMinutes() < 10 ? '00' : this.getMinutes();
+    var result = this.getFullYear()+'-'+month+'-'+date+'T'+hours+':'+min+':00.000z';
     return result;
 }
 

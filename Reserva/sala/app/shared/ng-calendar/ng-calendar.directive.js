@@ -15,6 +15,8 @@
             var dateStartTemp   = new Date(dateStart);
             var dateNow         = new Date();
             var obj             = {};
+            var hrs             = 26;
+
             obj.color           = color;
             obj.dateStart       = dateStart;
             obj.dateEnd         = dateEnd;
@@ -22,6 +24,7 @@
             obj.year           = dateStart.getFullYear();
             obj.days            = [];
             obj.hoursByDay      = [];
+
 
             for(var i = 0; i < 5 ; i++){
                 var objDay = {
@@ -39,9 +42,12 @@
             var isReserved = function(t1, t2){
                 var obj = {};
                 
+                console.log('reservas');
+                console.log(reservas);
+                
                 for(var i = 0; i < reservas.length; i++){
                     var objStatus = { id:0, name:'reserved' };
-                    if(reservas[i].timeStart.getTime() == t1.getTime() && reservas[i].timeEnd.getTime() == t2.getTime()){
+                    if(reservas[i].timeStart.getTime() === t1.getTime() && reservas[i].timeEnd.getTime() === t2.getTime()){
                         obj.data = reservas[i];
                         obj.data.status = objStatus;
                         obj.status = true;
@@ -57,10 +63,12 @@
                 obj.hoursByDay.push([]);
                 dateStartTemp.setHours(8);
 
-                for( var j = 0; j < 13 ; j++ ){
+
+                for( var j = 0; j < hrs ; j++ ){
 
                     var timeStartV = new Date(dateStartTemp);
-                    var timeEndV = new Date(dateStartTemp.setHours(dateStartTemp.getHours()+1));
+                    //var timeEndV = new Date(dateStartTemp.setHours(dateStartTemp.getHours()+1));
+                    var timeEndV = new Date(dateStartTemp.setMinutes(dateStartTemp.getMinutes()+30));
                     var objReserva = {};
                     var isReservedObj = isReserved(timeStartV, timeEndV);
 
