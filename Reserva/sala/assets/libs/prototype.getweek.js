@@ -54,5 +54,5 @@ Date.prototype.getCode = function(){
     var diff = this - start;
     var oneDay = 1000 * 60 * 60 * 24;
     var day = Math.floor(diff / oneDay);
-    return ( 24 * day ) + this.getHours();
+    return ( 24 * day ) + this.getHours() + this.getMinutes();
 };
