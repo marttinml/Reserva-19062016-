@@ -289,11 +289,11 @@
 }
 
 .alert-hour-number {
-    font-size: 90px;
+    font-size: 70px;
 }
 
 .ng-alert-ocuped .alert-hour-number {
-    font-size: 80px;
+    font-size: 28px;
 }
 
 .alert-date-separator {
@@ -312,7 +312,7 @@
 
 .alert-hour-time {
     font-size: 50px;
-    margin-top: -24px;
+    margin-top: 0px;
 }
 
 .ng-alert-ocuped .alert-hour-time {
