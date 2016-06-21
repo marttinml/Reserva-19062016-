@@ -37,14 +37,9 @@ String.prototype.parseToDate = function() {
 	var month = Number(this.substring(5, 7)) - 1;
 	var date = Number(this.substring(8, 10));
 	var hours = Number(this.substring(11, 13));
-	var minutes = Number(this.substring(14, 16));																																																	
+	var minutes = Number(this.substring(14, 16));																																													
     var result = new Date(year, month, date, hours, minutes,0,0);
 
-    console.log(year);
-    console.log(month);
-    console.log(date);
-    console.log(hours);
-    console.log(minutes);
     return result;
 };
 

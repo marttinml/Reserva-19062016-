@@ -25,7 +25,7 @@ var cargresdia = function (obj) {
     obj.reservas = obj.reservas || [];
 
     angular.element(document.getElementsByTagName("home")[0]).scope().reloadClock(obj.reservas, true);
-    console.log('Donass');
+//    console.log('Donass');
 };
 
 (function () {
@@ -42,8 +42,8 @@ var cargresdia = function (obj) {
             }
 
             for (var i = 0; i < result.length; i++) {
-                necesario[i].start = result[i].timeStart.parseToDate().getHours();
-                necesario[i].end = result[i].timeEnd.parseToDate().getHours();
+                necesario[i].start = result[i].timeStart.parseToDate().getHours() + (result[i].timeStart.parseToDate().getMinutes() / 60);
+                necesario[i].end = result[i].timeEnd.parseToDate().getHours() + (result[i].timeStart.parseToDate().getMinutes() / 60);
                 necesario[i].color = result[i].color;
             }
 
@@ -57,7 +57,7 @@ var cargresdia = function (obj) {
 
             necesario.sort(compare);
 
-            console.log(arr);
+//            console.log(arr);
             return necesario;
         };
 
@@ -84,8 +84,11 @@ var cargresdia = function (obj) {
             var dayNumber = today.getDate();
             var month = today.getMonthName();
 
+//            console.log(src);
 
             src = $scope.formatReservas(src);
+            
+//            console.log(src);
 
             $scope.sourceClock = {
                 date: new Date(),
@@ -109,6 +112,7 @@ var cargresdia = function (obj) {
                 },
                 today: day + ' ' + dayNumber + ' de ' + month
             };
+            
             if (apply)
                 $scope.$apply();
         };
@@ -136,7 +140,7 @@ var cargresdia = function (obj) {
                 name: '',
                 mail: '',
                 accept: function () {
-                    console.log('eliminarres:' + $scope.numeroDeReservaActual);
+//                    console.log('eliminarres:' + $scope.numeroDeReservaActual);
                     window.location = 'eliminarres:' + $scope.numeroDeReservaActual;
                     $scope.alerts.confirm = !$scope.alerts.confirm;
                     $scope.clock = !$scope.clock;
@@ -145,7 +149,7 @@ var cargresdia = function (obj) {
                     }, 200);
                 },
                 back: function () {
-                    console.log('Back');
+//                    console.log('Back');
                     location.reload();
                 }
             },
@@ -157,7 +161,7 @@ var cargresdia = function (obj) {
                     if (valor !== '') {
                         $reserva.getcargaDatos(valor, function (event, data) {
                             if (data.employeeId != undefined) {
-                                console.log('Pintar');
+//                                console.log('Pintar');
                                 $scope.datosDeCancelacion = data;
                                 $rootScope.spin = false;
                                 $scope.alerts.code = !$scope.alerts.code;
@@ -171,11 +175,11 @@ var cargresdia = function (obj) {
                                 $scope.sourceAlert.code.showError = false;
                                 $rootScope.spin = false;
                                 document.getElementById("codigoReserva").value = '';
-                                console.log('No pintar');
+//                                console.log('No pintar');
                             }
                         });
                     } else {
-                        console.log(valor);
+//                        console.log(valor);
                     }
                 },
                 back: function () {

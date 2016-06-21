@@ -15,6 +15,8 @@
                 
                 var config = obj.config;
                 var sourceArray = obj.source;
+                
+//                console.log(obj.source);
 
                 function makeConfig(options, source) {
                     var self = this;
