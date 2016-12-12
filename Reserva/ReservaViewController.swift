@@ -148,6 +148,10 @@ class ReservaViewController: UIViewController ,UIWebViewDelegate,respempleadosPr
                 //motivo
                 motivo=arr[i]["motivo"] as! String
                 
+                //
+                
+                
+                
                 
                 date = obtenerFechaFormatead(arr[i]["timeStart"] as! String)
                 date2 = obtenerFechaFormatead(arr[i]["timeEnd"] as! String)
@@ -159,6 +163,14 @@ class ReservaViewController: UIViewController ,UIWebViewDelegate,respempleadosPr
                 if(i==arr.count-1){
                     hrfin=obternerHrs(arr[i]["timeEnd"] as! String)
                 }
+                
+                print("horas-------------------->>>>>>>>>>>>>>>>>>>>")
+                print(tinicio)
+                print(tfin)
+                print("Parcer------------------->>>>>>>>>>>>>>>>>>>>>");
+                print(hrinicio)
+                print(hrfin)
+                
                 
                 Reserva.crearRegistros(managedContext, idreserva: NSNumber(integer:rsid), fechainicioS: tinicio,fechainicioD:date, fechafinS: tfin,fechafinD:date2, nombre: nom, idempleado: NSNumber(integer:idemp), foto: foto,color:color,mail:mail,hora:NSNumber(integer:hora),motivo: motivo)
                 
@@ -229,7 +241,7 @@ class ReservaViewController: UIViewController ,UIWebViewDelegate,respempleadosPr
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'z'"
         
         if let date = dateFormatter.dateFromString(hrs) {
-            dateFormatter.dateFormat = "h,a"
+            dateFormatter.dateFormat = "h:mm,a"
             retstr = dateFormatter.stringFromDate(date)
             
         }
